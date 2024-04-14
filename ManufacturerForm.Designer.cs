@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBxContactInfo = new System.Windows.Forms.TextBox();
             this.contactInfo = new System.Windows.Forms.Label();
             this.txtBxOfficialSite = new System.Windows.Forms.TextBox();
@@ -36,6 +37,8 @@
             this.name = new System.Windows.Forms.Label();
             this.Ok = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBxContactInfo
@@ -83,6 +86,7 @@
             this.txtBxName.Name = "txtBxName";
             this.txtBxName.Size = new System.Drawing.Size(672, 34);
             this.txtBxName.TabIndex = 45;
+            this.txtBxName.Validating += new System.ComponentModel.CancelEventHandler(this.txtBxName_Validating);
             // 
             // officialSite
             // 
@@ -132,6 +136,10 @@
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ManufacturerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,6 +156,7 @@
             this.Name = "ManufacturerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Производитель";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +171,6 @@
         public System.Windows.Forms.TextBox txtBxContactInfo;
         public System.Windows.Forms.TextBox txtBxOfficialSite;
         public System.Windows.Forms.TextBox txtBxName;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

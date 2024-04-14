@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Ok = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.name = new System.Windows.Forms.Label();
             this.txtBxName = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Ok
@@ -77,6 +80,11 @@
             this.txtBxName.Name = "txtBxName";
             this.txtBxName.Size = new System.Drawing.Size(642, 34);
             this.txtBxName.TabIndex = 56;
+            this.txtBxName.Validating += new System.ComponentModel.CancelEventHandler(this.txtBxName_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // SimpleForm
             // 
@@ -92,6 +100,7 @@
             this.Name = "SimpleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Форма";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +112,6 @@
         private System.Windows.Forms.Button Cancel;
         public System.Windows.Forms.TextBox txtBxName;
         public System.Windows.Forms.Label name;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

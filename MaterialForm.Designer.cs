@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.name = new System.Windows.Forms.Label();
             this.fieldOfApplication = new System.Windows.Forms.Label();
             this.txtBxName = new System.Windows.Forms.TextBox();
@@ -78,6 +79,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,6 +102,7 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // name
@@ -134,6 +137,7 @@
             this.txtBxName.Name = "txtBxName";
             this.txtBxName.Size = new System.Drawing.Size(973, 34);
             this.txtBxName.TabIndex = 2;
+            this.txtBxName.Validating += new System.ComponentModel.CancelEventHandler(this.txtBxName_Validating);
             // 
             // txtBxFieldOfApplication
             // 
@@ -422,6 +426,7 @@
             this.cmbBxManufacturer.Name = "cmbBxManufacturer";
             this.cmbBxManufacturer.Size = new System.Drawing.Size(761, 37);
             this.cmbBxManufacturer.TabIndex = 29;
+            this.cmbBxManufacturer.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBxManufacturer_Validating);
             // 
             // Cancel
             // 
@@ -490,7 +495,7 @@
             this.storesPanel.ColumnCount = 3;
             this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.storesPanel.Location = new System.Drawing.Point(4, 45);
             this.storesPanel.Name = "storesPanel";
             this.storesPanel.RowCount = 2;
@@ -744,6 +749,10 @@
             this.panel2.Size = new System.Drawing.Size(1265, 51);
             this.panel2.TabIndex = 41;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // MaterialForm
             // 
             this.AcceptButton = this.Ok;
@@ -815,6 +824,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -872,5 +882,6 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

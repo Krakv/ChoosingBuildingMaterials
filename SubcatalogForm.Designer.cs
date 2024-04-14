@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBxName = new System.Windows.Forms.TextBox();
             this.catalog = new System.Windows.Forms.Label();
             this.Ok = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.subcatalog = new System.Windows.Forms.Label();
             this.catalogCmbBx = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBxName
@@ -45,6 +48,7 @@
             this.txtBxName.Name = "txtBxName";
             this.txtBxName.Size = new System.Drawing.Size(616, 34);
             this.txtBxName.TabIndex = 60;
+            this.txtBxName.Validating += new System.ComponentModel.CancelEventHandler(this.txtBxName_Validating);
             // 
             // catalog
             // 
@@ -98,6 +102,11 @@
             this.catalogCmbBx.Name = "catalogCmbBx";
             this.catalogCmbBx.Size = new System.Drawing.Size(616, 33);
             this.catalogCmbBx.TabIndex = 62;
+            this.catalogCmbBx.Validating += new System.ComponentModel.CancelEventHandler(this.catalogCmbBx_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // SubcatalogForm
             // 
@@ -113,6 +122,7 @@
             this.Name = "SubcatalogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SubcatalogForm";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +136,6 @@
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Label subcatalog;
         public System.Windows.Forms.ComboBox catalogCmbBx;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

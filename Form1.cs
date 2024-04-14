@@ -303,7 +303,7 @@ namespace ChoosingBuildingMaterials
                         mainTable.Rows.Remove(Row);
                         foreach (string[] item in values)
                             mainTable.Rows.Add(item);
-                        if (mainTable.Rows.Count == 20)
+                        if (values.Count() >= 20)
                         {
                             string[] itemRow = { "0", "Еще", "", "", "", "", "", "", "", "", "", "", "", "" };
                             mainTable.Rows.Add(itemRow);

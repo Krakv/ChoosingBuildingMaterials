@@ -389,7 +389,7 @@ namespace ChoosingBuildingMaterials
                     $"GROUP BY materials.material_number " +
                     $"ORDER BY {order} ";
 
-                var cmd = new MySqlCommand(lastSelect, con);
+                var cmd = new MySqlCommand(lastSelect  + $" LIMIT {limit} OFFSET {offset} ", con);
 
 
                 using (var dr = cmd.ExecuteReader())

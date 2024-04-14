@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBxSecondName = new System.Windows.Forms.TextBox();
             this.secondName = new System.Windows.Forms.Label();
             this.txtBxRealAddress = new System.Windows.Forms.TextBox();
@@ -45,6 +46,8 @@
             this.phoneNumber = new System.Windows.Forms.Label();
             this.Ok = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBxSecondName
@@ -79,6 +82,7 @@
             this.txtBxRealAddress.Name = "txtBxRealAddress";
             this.txtBxRealAddress.Size = new System.Drawing.Size(456, 34);
             this.txtBxRealAddress.TabIndex = 33;
+            this.txtBxRealAddress.Validating += new System.ComponentModel.CancelEventHandler(this.txtBxName_Validating);
             // 
             // realAddress
             // 
@@ -112,6 +116,7 @@
             this.txtBxName.Name = "txtBxName";
             this.txtBxName.Size = new System.Drawing.Size(456, 34);
             this.txtBxName.TabIndex = 30;
+            this.txtBxName.Validating += new System.ComponentModel.CancelEventHandler(this.txtBxName_Validating);
             // 
             // legalAddress
             // 
@@ -234,6 +239,10 @@
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // StoreForm
             // 
             this.AcceptButton = this.Ok;
@@ -262,6 +271,7 @@
             this.Name = "StoreForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Магазин";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +295,6 @@
         public System.Windows.Forms.TextBox txtBxFirstName;
         public System.Windows.Forms.TextBox txtBxFatherName;
         public System.Windows.Forms.TextBox txtBxPhoneNumber;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

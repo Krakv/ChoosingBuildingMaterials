@@ -32,6 +32,8 @@
             this.treeView = new System.Windows.Forms.TreeView();
             this.mainTable = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportButton = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogsButton = new System.Windows.Forms.ToolStripMenuItem();
             this.filterButton = new System.Windows.Forms.ToolStripMenuItem();
             this.changeTablesButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +50,8 @@
             this.searchButton = new System.Windows.Forms.ToolStripMenuItem();
             this.adminEnter = new System.Windows.Forms.ToolStripMenuItem();
             this.exitButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutProgram = new System.Windows.Forms.ToolStripMenuItem();
+            this.helper = new System.Windows.Forms.ToolStripMenuItem();
             this.TreeViewDataBase = new System.Windows.Forms.TreeView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -62,8 +64,6 @@
             this.materialInfoBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.manufacturerInfoBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.storesInfoBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutProgram = new System.Windows.Forms.ToolStripMenuItem();
-            this.helper = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -136,6 +136,21 @@
             this.menuStrip1.Size = new System.Drawing.Size(1515, 32);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileMenuItem
+            // 
+            this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportButton});
+            this.fileMenuItem.Name = "fileMenuItem";
+            this.fileMenuItem.Size = new System.Drawing.Size(59, 28);
+            this.fileMenuItem.Text = "Файл";
+            // 
+            // exportButton
+            // 
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(148, 26);
+            this.exportButton.Text = "Экспорт";
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // catalogsButton
             // 
@@ -276,20 +291,17 @@
             this.exitButton.Text = "Выход";
             this.exitButton.Visible = false;
             // 
-            // fileMenuItem
+            // aboutProgram
             // 
-            this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportButton});
-            this.fileMenuItem.Name = "fileMenuItem";
-            this.fileMenuItem.Size = new System.Drawing.Size(59, 28);
-            this.fileMenuItem.Text = "Файл";
+            this.aboutProgram.Name = "aboutProgram";
+            this.aboutProgram.Size = new System.Drawing.Size(118, 28);
+            this.aboutProgram.Text = "О программе";
             // 
-            // exportButton
+            // helper
             // 
-            this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(224, 26);
-            this.exportButton.Text = "Экспорт";
-            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+            this.helper.Name = "helper";
+            this.helper.Size = new System.Drawing.Size(81, 28);
+            this.helper.Text = "Справка";
             // 
             // TreeViewDataBase
             // 
@@ -442,18 +454,6 @@
             this.storesInfoBtn.Size = new System.Drawing.Size(94, 24);
             this.storesInfoBtn.Text = "Магазины";
             this.storesInfoBtn.Click += new System.EventHandler(this.storesInfoBtn_Click);
-            // 
-            // aboutProgram
-            // 
-            this.aboutProgram.Name = "aboutProgram";
-            this.aboutProgram.Size = new System.Drawing.Size(118, 28);
-            this.aboutProgram.Text = "О программе";
-            // 
-            // helper
-            // 
-            this.helper.Name = "helper";
-            this.helper.Size = new System.Drawing.Size(81, 28);
-            this.helper.Text = "Справка";
             // 
             // MainForm
             // 
