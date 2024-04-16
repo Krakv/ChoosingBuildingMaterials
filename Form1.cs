@@ -56,7 +56,7 @@ namespace ChoosingBuildingMaterials
 
         private void LoadCatalogs(TreeNode mainNode)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             using (var con = new MySqlConnection(cs))
             {
                 con.Open();
@@ -81,7 +81,7 @@ namespace ChoosingBuildingMaterials
 
         private void LoadSubcatalogs(TreeNodeWithExtraInfo inputNode)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
 
             using (var con = new MySqlConnection(cs))
             {
@@ -533,7 +533,7 @@ namespace ChoosingBuildingMaterials
             {
                 try
                 {
-                    var cs = $"server=localhost;user=admin;database=is_building_materials;password={form.txtBxName.Text};CharSet=utf8;";
+                    var cs = $"server=krakv.tplinkdns.com;user=admin;database=is_building_materials;password={form.txtBxName.Text};CharSet=utf8;";
                     var con = new MySqlConnection(cs);
                     con.Open();
                     con.Close();

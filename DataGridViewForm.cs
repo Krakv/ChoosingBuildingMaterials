@@ -36,7 +36,7 @@ namespace ChoosingBuildingMaterials
 
         private void DataGridViewForm_Load(object sender, EventArgs e)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             string query = "SELECT * " +
                 $"FROM {Table} " +
                 $"WHERE 1 = 1 {Condition} " +
@@ -57,7 +57,7 @@ namespace ChoosingBuildingMaterials
             {
                 if (SearchColumn != "")
                 {
-                    var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+                    var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
                     string query = "SELECT * " +
                         $"FROM {Table} " +
                         $"WHERE {SearchColumn} LIKE '%{searchBox.Text}%' {Condition} " +

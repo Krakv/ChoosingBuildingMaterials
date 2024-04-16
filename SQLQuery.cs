@@ -19,7 +19,7 @@ namespace ChoosingBuildingMaterials
         static public string lastSelect = "";
         public static void Add(string table, string[] parameters)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             string values = "(";
             foreach (var parameter in parameters)
             {
@@ -37,7 +37,7 @@ namespace ChoosingBuildingMaterials
 
         public static void UPDATE(string table, string parameters, string condition)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             using (var con = new MySqlConnection(cs))
             {
                 con.Open();
@@ -49,7 +49,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadManufacturers(string condition = "")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -77,7 +77,7 @@ namespace ChoosingBuildingMaterials
 
         public static string SimpleReadQuery(string query, string column)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             string result = "";
 
             using (var con = new MySqlConnection(cs))
@@ -98,7 +98,7 @@ namespace ChoosingBuildingMaterials
 
         public static string SimpleExecuteQuery(string query)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             string result = "";
 
             using (var con = new MySqlConnection(cs))
@@ -113,7 +113,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadRegions()
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -138,7 +138,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadMaterials(string condition = "", int offset = 0, int limit = 20)
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -177,7 +177,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadMaterialsCatalog( string subcatalog, string condition = "", int offset = 0, int limit = 20, string order = "materials.name")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -233,7 +233,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadMaterialsCatalogWithCheckBoxes(string subcatalog, string condition = "", int offset = 0, int limit = 20, string tables = "", string order = "materials.name")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -291,7 +291,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadMaterialsAvailableStores(string condition = "")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -322,7 +322,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadMaterialsAvailable(string condition = "", int offset = 0, int limit = 20, string order = "materials.name")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -374,7 +374,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadMaterialsAvailableWithCheckBoxes(string condition = "", int offset = 0, int limit = 20, string tables = "", string order = "materials.name")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -420,7 +420,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadStores(string condition = "")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -451,7 +451,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadTags(string condition = "", string tables = "")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -478,7 +478,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadCatalogs(string condition = "", string tables = "")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -504,7 +504,7 @@ namespace ChoosingBuildingMaterials
 
         public static List<string[]> ReadSubcatalogs(string condition = "", string tables = "")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
@@ -531,7 +531,7 @@ namespace ChoosingBuildingMaterials
 
         public static void OutFile(string path = "")
         {
-            var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
             List<string[]> result = new List<string[]>();
 
             using (var con = new MySqlConnection(cs))
