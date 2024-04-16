@@ -53,21 +53,28 @@ namespace ChoosingBuildingMaterials
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            if (SearchColumn != "")
+            try
             {
-                var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
-                string query = "SELECT * " +
-                    $"FROM {Table} " +
-                    $"WHERE {SearchColumn} LIKE '%{searchBox.Text}%' {Condition} " +
-                    $"LIMIT {Limit} OFFSET {Offset}";
-                using (var con = new MySqlConnection(cs))
+                if (SearchColumn != "")
                 {
-                    con.Open();
-                    MySqlDataAdapter ms = new MySqlDataAdapter(query, con);
-                    DataTable table = new DataTable();
-                    ms.Fill(table);
-                    dataGridView1.DataSource = table;
+                    var cs = $"server=localhost;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+                    string query = "SELECT * " +
+                        $"FROM {Table} " +
+                        $"WHERE {SearchColumn} LIKE '%{searchBox.Text}%' {Condition} " +
+                        $"LIMIT {Limit} OFFSET {Offset}";
+                    using (var con = new MySqlConnection(cs))
+                    {
+                        con.Open();
+                        MySqlDataAdapter ms = new MySqlDataAdapter(query, con);
+                        DataTable table = new DataTable();
+                        ms.Fill(table);
+                        dataGridView1.DataSource = table;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка поиска. \nТекст ошибки: \n" + ex.Message, "Ошибка");
             }
         }
 
@@ -94,20 +101,25 @@ namespace ChoosingBuildingMaterials
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Table == "materials")
+            try
             {
-                UpdateMaterial(dataGridView1.Rows[e.RowIndex]);
+                if (Table == "materials")
+                    UpdateMaterial(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "tags")
+                    UpdateTag(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "stores")
+                    UpdateStore(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "manufacturers")
+                    UpdateManufacturer(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "catalogs")
+                    UpdateCatalog(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "subcatalogs")
+                    UpdateSubcatalog(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
             }
-            else if (Table == "tags")
-                UpdateTag(dataGridView1.Rows[e.RowIndex]);
-            else if (Table == "stores")
-                UpdateStore(dataGridView1.Rows[e.RowIndex]);
-            else if (Table == "manufacturers")
-                UpdateManufacturer(dataGridView1.Rows[e.RowIndex]);
-            else if (Table == "catalogs")
-                UpdateCatalog(dataGridView1.Rows[e.RowIndex]);
-            else if (Table == "subcatalogs")
-                UpdateSubcatalog(dataGridView1.Rows[e.RowIndex]);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка редактирования. \nТекст ошибки: \n" + ex.Message, "Ошибка");
+            }
             searchButton_Click(sender, e);
         }
 
@@ -117,59 +129,76 @@ namespace ChoosingBuildingMaterials
             string num = dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value.ToString();
             if (res == DialogResult.Yes)
             {
-                if (Table == "materials")
-                    SQLQuery.SimpleExecuteQuery($"DELETE FROM materials WHERE material_number = {num}");
-                else if (Table == "stores")
-                    SQLQuery.SimpleExecuteQuery($"DELETE FROM stores WHERE store_number = {num}");
-                else if (Table == "manufacturers")
-                    SQLQuery.SimpleExecuteQuery($"DELETE FROM materials WHERE material_number = {num}");
-                else if (Table == "special_offers")
-                    SQLQuery.SimpleExecuteQuery($"DELETE FROM special_offers WHERE number = {num}");
-                else if (Table == "tags")
-                    SQLQuery.SimpleExecuteQuery($"DELETE FROM tags WHERE tag_id = {num}");
-                else if (Table == "catalogs")
-                    SQLQuery.SimpleExecuteQuery($"DELETE FROM catalogs WHERE id = {num}");
-                else if (Table == "subcatalogs")
-                    SQLQuery.SimpleExecuteQuery($"DELETE FROM subcatalogs WHERE id = {num}");
+                try
+                {
+                    if (Table == "materials")
+                        SQLQuery.SimpleExecuteQuery($"DELETE FROM materials WHERE material_number = {num}");
+                    else if (Table == "stores")
+                        SQLQuery.SimpleExecuteQuery($"DELETE FROM stores WHERE store_number = {num}");
+                    else if (Table == "manufacturers")
+                        SQLQuery.SimpleExecuteQuery($"DELETE FROM manufacturers WHERE manufacturer_number = {num}");
+                    else if (Table == "special_offers")
+                        SQLQuery.SimpleExecuteQuery($"DELETE FROM special_offers WHERE number = {num}");
+                    else if (Table == "tags")
+                        SQLQuery.SimpleExecuteQuery($"DELETE FROM tags WHERE tag_id = {num}");
+                    else if (Table == "catalogs")
+                        SQLQuery.SimpleExecuteQuery($"DELETE FROM catalogs WHERE id = {num}");
+                    else if (Table == "subcatalogs")
+                        SQLQuery.SimpleExecuteQuery($"DELETE FROM subcatalogs WHERE id = {num}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Произошла ошибка удаления. \nТекст ошибки: \n" + ex.Message, "Ошибка");
+                }
                 searchButton_Click(sender, e);
             }
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (Table == "materials")
-                addMaterialBtn_Click(sender, e);
-            else if (Table == "stores")
-                addStoreButton_Click(sender, e);
-            else if (Table == "manufacturers")
-                addManufacturerBtn_Click(sender, e);
-            else if (Table == "special_offers")
-                addSpecialOfferBtn_Click(sender, e);
-            else if (Table == "tags")
-                addTag_Click_1(sender, e);
-            else if (Table == "catalogs")
-                addCatalog_Click(sender, e);
-            else if (Table == "subcatalogs")
-                addSubcatalog_Click(sender, e);
+            try
+            {
+                if (Table == "materials")
+                    addMaterialBtn_Click(sender, e);
+                else if (Table == "stores")
+                    addStoreButton_Click(sender, e);
+                else if (Table == "manufacturers")
+                    addManufacturerBtn_Click(sender, e);
+                else if (Table == "tags")
+                    addTag_Click_1(sender, e);
+                else if (Table == "catalogs")
+                    addCatalog_Click(sender, e);
+                else if (Table == "subcatalogs")
+                    addSubcatalog_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка добавления. \nТекст ошибки: \n" + ex.Message, "Ошибка");
+            }
             searchButton_Click(sender, e);
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (Table == "materials")
+            try
             {
-                UpdateMaterial(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                if (Table == "materials")
+                    UpdateMaterial(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "tags")
+                    UpdateTag(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "stores")
+                    UpdateStore(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "manufacturers")
+                    UpdateManufacturer(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "catalogs")
+                    UpdateCatalog(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+                else if (Table == "subcatalogs")
+                    UpdateSubcatalog(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
             }
-            else if (Table == "tags")
-                UpdateTag(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
-            else if (Table == "stores")
-                UpdateStore(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
-            else if (Table == "manufacturers")
-                UpdateManufacturer(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
-            else if (Table == "catalogs")
-                UpdateCatalog(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
-            else if (Table == "subcatalogs")
-                UpdateSubcatalog(dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка редактирования. \nТекст ошибки: \n" + ex.Message, "Ошибка");
+            }
             searchButton_Click(sender, e);
         }
 
@@ -244,6 +273,7 @@ namespace ChoosingBuildingMaterials
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
             {
+                
                 string result = " ";
                 result += $" name = '{frm.txtBxName.Text}', ";
                 result += $" application_field = '{frm.txtBxFieldOfApplication.Text}', ";
@@ -263,32 +293,34 @@ namespace ChoosingBuildingMaterials
                     CheckBoxWithId item = frm.storesPanel.Controls[j * 3] as CheckBoxWithId;
                     System.Windows.Forms.TextBox count = frm.storesPanel.Controls[j * 3 + 1] as System.Windows.Forms.TextBox;
                     System.Windows.Forms.TextBox cost = frm.storesPanel.Controls[j * 3 + 2] as System.Windows.Forms.TextBox;
-
-                    if (item != null && item.Checked)
+                    if (item != null)
                     {
-                        List<string[]> lst = SQLQuery.ReadMaterialsAvailableStores($" AND materials_available.material_number = {row.Cells[0].Value} AND stores.store_number = {item.Id} ");
-                        if (lst != null && lst.Count > 0)
+                        if (item.Checked)
                         {
-                            SQLQuery.UPDATE("materials_available", $" count = '{count.Text}', cost = '{cost.Text}' ", $" AND material_available_number = {lst[0][0]} ");
+                            List<string[]> lst = SQLQuery.ReadMaterialsAvailableStores($" AND materials_available.material_number = {row.Cells[0].Value} AND stores.store_number = {item.Id} ");
+                            if (lst != null && lst.Count > 0)
+                            {
+                                SQLQuery.UPDATE("materials_available", $" count = '{count.Text}', cost = '{cost.Text}' ", $" AND material_available_number = {lst[0][0]} ");
+                            }
+                            else
+                            {
+                                int i = 0;
+                                string[] vs = new string[5];
+                                vs[i++] = "";
+                                vs[i++] = number.ToString();
+                                vs[i++] = item.Id.ToString();
+                                vs[i++] = count.Text;
+                                vs[i++] = cost.Text;
+                                SQLQuery.Add("materials_available", vs);
+                            }
                         }
                         else
                         {
-                            int i = 0;
-                            string[] vs = new string[5];
-                            vs[i++] = "";
-                            vs[i++] = number.ToString();
-                            vs[i++] = item.Id.ToString();
-                            vs[i++] = count.Text;
-                            vs[i++] = cost.Text;
-                            SQLQuery.Add("materials_available", vs);
-                        }
-                    }
-                    else
-                    {
-                        string res = SQLQuery.SimpleReadQuery($"SELECT * FROM materials_available WHERE material_number = {row.Cells[0].Value} AND store_number = {item.Id} ", "material_available_number");
-                        if (res != "")
-                        {
-                            SQLQuery.SimpleExecuteQuery($"DELETE FROM materials_available WHERE material_available_number = {res} ");
+                            string res = SQLQuery.SimpleReadQuery($"SELECT * FROM materials_available WHERE material_number = {row.Cells[0].Value} AND store_number = {item.Id} ", "material_available_number");
+                            if (res != "")
+                            {
+                                SQLQuery.SimpleExecuteQuery($"DELETE FROM materials_available WHERE material_available_number = {res} ");
+                            }
                         }
                     }
                 }
@@ -574,22 +606,6 @@ namespace ChoosingBuildingMaterials
 
         private void addSpecialOfferBtn_Click(object sender, EventArgs e)
         {
-            SpecialOffer frm = new SpecialOffer();
-            List<string[]> manufacturers = SQLQuery.ReadManufacturers();
-            foreach (string[] item in manufacturers)
-            {
-                frm.cmbBxManufacturer.Items.Add(item[1]);
-            }
-            frm.ShowDialog();
-            if (frm.DialogResult == DialogResult.OK)
-            {
-                int index = 0;
-                string[] values = new string[3];
-                values[index++] = "";
-                values[index++] = SQLQuery.SimpleReadQuery($"SELECT manufacturer_number, name FROM manufacturers WHERE name = '{frm.cmbBxManufacturer.Text}'", "manufacturer_number");
-                values[index++] = frm.txtBxDescription.Text;
-                SQLQuery.Add("special_offers", values);
-            }
         }
 
         private void addTag_Click_1(object sender, EventArgs e)

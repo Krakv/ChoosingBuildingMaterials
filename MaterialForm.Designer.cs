@@ -80,6 +80,10 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.storesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -132,10 +136,10 @@
             this.txtBxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxName.Location = new System.Drawing.Point(280, 6);
+            this.txtBxName.Location = new System.Drawing.Point(296, 6);
             this.txtBxName.MaxLength = 50;
             this.txtBxName.Name = "txtBxName";
-            this.txtBxName.Size = new System.Drawing.Size(973, 34);
+            this.txtBxName.Size = new System.Drawing.Size(916, 34);
             this.txtBxName.TabIndex = 2;
             this.txtBxName.Validating += new System.ComponentModel.CancelEventHandler(this.txtBxName_Validating);
             // 
@@ -144,10 +148,10 @@
             this.txtBxFieldOfApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxFieldOfApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxFieldOfApplication.Location = new System.Drawing.Point(280, 46);
+            this.txtBxFieldOfApplication.Location = new System.Drawing.Point(296, 46);
             this.txtBxFieldOfApplication.MaxLength = 200;
             this.txtBxFieldOfApplication.Name = "txtBxFieldOfApplication";
-            this.txtBxFieldOfApplication.Size = new System.Drawing.Size(843, 34);
+            this.txtBxFieldOfApplication.Size = new System.Drawing.Size(796, 34);
             this.txtBxFieldOfApplication.TabIndex = 3;
             // 
             // changeFieldOfApplication
@@ -179,10 +183,10 @@
             this.txtBxPackaging.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxPackaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxPackaging.Location = new System.Drawing.Point(280, 86);
+            this.txtBxPackaging.Location = new System.Drawing.Point(296, 86);
             this.txtBxPackaging.MaxLength = 200;
             this.txtBxPackaging.Name = "txtBxPackaging";
-            this.txtBxPackaging.Size = new System.Drawing.Size(843, 34);
+            this.txtBxPackaging.Size = new System.Drawing.Size(796, 34);
             this.txtBxPackaging.TabIndex = 6;
             // 
             // packaging
@@ -213,11 +217,11 @@
             this.txtBxTechnicalCharacteristics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxTechnicalCharacteristics.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxTechnicalCharacteristics.Location = new System.Drawing.Point(362, 168);
+            this.txtBxTechnicalCharacteristics.Location = new System.Drawing.Point(382, 168);
             this.txtBxTechnicalCharacteristics.MaxLength = 1000;
             this.txtBxTechnicalCharacteristics.Multiline = true;
             this.txtBxTechnicalCharacteristics.Name = "txtBxTechnicalCharacteristics";
-            this.txtBxTechnicalCharacteristics.Size = new System.Drawing.Size(761, 61);
+            this.txtBxTechnicalCharacteristics.Size = new System.Drawing.Size(710, 61);
             this.txtBxTechnicalCharacteristics.TabIndex = 9;
             // 
             // technicalCharacteristics
@@ -248,11 +252,11 @@
             this.txtBxInstructionForUse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxInstructionForUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxInstructionForUse.Location = new System.Drawing.Point(362, 235);
+            this.txtBxInstructionForUse.Location = new System.Drawing.Point(382, 235);
             this.txtBxInstructionForUse.MaxLength = 1000;
             this.txtBxInstructionForUse.Multiline = true;
             this.txtBxInstructionForUse.Name = "txtBxInstructionForUse";
-            this.txtBxInstructionForUse.Size = new System.Drawing.Size(761, 61);
+            this.txtBxInstructionForUse.Size = new System.Drawing.Size(710, 61);
             this.txtBxInstructionForUse.TabIndex = 12;
             // 
             // instructionForUse
@@ -283,11 +287,11 @@
             this.txtBxPrecautions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxPrecautions.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxPrecautions.Location = new System.Drawing.Point(362, 302);
+            this.txtBxPrecautions.Location = new System.Drawing.Point(382, 302);
             this.txtBxPrecautions.MaxLength = 1000;
             this.txtBxPrecautions.Multiline = true;
             this.txtBxPrecautions.Name = "txtBxPrecautions";
-            this.txtBxPrecautions.Size = new System.Drawing.Size(761, 61);
+            this.txtBxPrecautions.Size = new System.Drawing.Size(710, 61);
             this.txtBxPrecautions.TabIndex = 15;
             // 
             // precautions
@@ -318,11 +322,11 @@
             this.txtBxStorageAndTransportation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxStorageAndTransportation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxStorageAndTransportation.Location = new System.Drawing.Point(362, 369);
+            this.txtBxStorageAndTransportation.Location = new System.Drawing.Point(382, 369);
             this.txtBxStorageAndTransportation.MaxLength = 1000;
             this.txtBxStorageAndTransportation.Multiline = true;
             this.txtBxStorageAndTransportation.Name = "txtBxStorageAndTransportation";
-            this.txtBxStorageAndTransportation.Size = new System.Drawing.Size(761, 61);
+            this.txtBxStorageAndTransportation.Size = new System.Drawing.Size(710, 61);
             this.txtBxStorageAndTransportation.TabIndex = 18;
             // 
             // storageAndTransportation
@@ -353,11 +357,11 @@
             this.txtBxCertificates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxCertificates.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxCertificates.Location = new System.Drawing.Point(362, 436);
+            this.txtBxCertificates.Location = new System.Drawing.Point(382, 436);
             this.txtBxCertificates.MaxLength = 400;
             this.txtBxCertificates.Multiline = true;
             this.txtBxCertificates.Name = "txtBxCertificates";
-            this.txtBxCertificates.Size = new System.Drawing.Size(761, 61);
+            this.txtBxCertificates.Size = new System.Drawing.Size(710, 61);
             this.txtBxCertificates.TabIndex = 21;
             // 
             // certificates
@@ -399,10 +403,10 @@
             this.txtBxUnit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtBxUnit.Location = new System.Drawing.Point(280, 126);
+            this.txtBxUnit.Location = new System.Drawing.Point(296, 126);
             this.txtBxUnit.MaxLength = 100;
             this.txtBxUnit.Name = "txtBxUnit";
-            this.txtBxUnit.Size = new System.Drawing.Size(843, 34);
+            this.txtBxUnit.Size = new System.Drawing.Size(796, 34);
             this.txtBxUnit.TabIndex = 27;
             // 
             // unit
@@ -420,11 +424,13 @@
             // 
             this.cmbBxManufacturer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbBxManufacturer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbBxManufacturer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBxManufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbBxManufacturer.FormattingEnabled = true;
-            this.cmbBxManufacturer.Location = new System.Drawing.Point(362, 503);
+            this.cmbBxManufacturer.Location = new System.Drawing.Point(382, 503);
             this.cmbBxManufacturer.Name = "cmbBxManufacturer";
-            this.cmbBxManufacturer.Size = new System.Drawing.Size(761, 37);
+            this.cmbBxManufacturer.Size = new System.Drawing.Size(710, 37);
             this.cmbBxManufacturer.TabIndex = 29;
             this.cmbBxManufacturer.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBxManufacturer_Validating);
             // 
@@ -452,6 +458,7 @@
             this.Ok.TabIndex = 31;
             this.Ok.Text = "Ок";
             this.Ok.UseVisualStyleBackColor = true;
+            this.Ok.Click += new System.EventHandler(this.Ok_Click);
             // 
             // addManufacturer
             // 
@@ -495,7 +502,10 @@
             this.storesPanel.ColumnCount = 3;
             this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.storesPanel.Controls.Add(this.label3, 2, 0);
+            this.storesPanel.Controls.Add(this.label2, 1, 0);
+            this.storesPanel.Controls.Add(this.label1, 0, 0);
             this.storesPanel.Location = new System.Drawing.Point(4, 45);
             this.storesPanel.Name = "storesPanel";
             this.storesPanel.RowCount = 2;
@@ -753,6 +763,31 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(4, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(974, 48);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Магазин";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(985, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 48);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Количество";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(1106, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 48);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Стоимость (руб.)";
+            // 
             // MaterialForm
             // 
             this.AcceptButton = this.Ok;
@@ -796,6 +831,9 @@
             this.Name = "MaterialForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Материал";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MaterialForm_FormClosing);
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.MaterialForm_Validating);
+            this.storesPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -883,5 +921,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

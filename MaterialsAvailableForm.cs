@@ -47,16 +47,15 @@ namespace ChoosingBuildingMaterials
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            Controls.Remove(tableLayoutPanel);
             TextBox txt = new TextBox();
             txt.Multiline = true;
             txt.ScrollBars = ScrollBars.Vertical;
             //txt.Dock = DockStyle.Fill;
+            Controls.Remove(tableLayoutPanel);
             txt.Location = new Point(0, 30);
             txt.Width = 530;
-            txt.Height = Height - 30;
+            txt.Height = Height * 30 +600;
             txt.ReadOnly = true;
-            txt.BorderStyle = BorderStyle.None;
             ButtonWithId btn = sender as ButtonWithId;
             List<string[]> store = SQLQuery.ReadStores($" WHERE store_number = {btn.Id} ");
             txt.Text += $"Наименование: {store[0][1]} \r\n";
@@ -67,6 +66,11 @@ namespace ChoosingBuildingMaterials
             txt.Text += $"Отчество директора: {store[0][6]} \r\n";
             txt.Text += $"Номер телефона: {store[0][7]} \r\n";
             Controls.Add(txt);
+        }
+
+        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

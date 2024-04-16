@@ -534,6 +534,8 @@ namespace ChoosingBuildingMaterials
                     DataGridViewForm.user = user;
                     DataGridViewForm.password = password;
                     MessageBox.Show("Вход произведен.");
+                    adminEnter.Enabled = false;
+                    adminEnter.Visible = false;
                     changeTablesButton.Visible = true;
                     changeTablesButton.Enabled = true;
                 }

@@ -47,7 +47,12 @@ namespace ChoosingBuildingMaterials
 
         private void changeUnit_Click(object sender, EventArgs e)
         {
-
+            InputText frm = new InputText(txtBxUnit.Text);
+            frm.textBox1.MaxLength = txtBxUnit.MaxLength;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtBxPackaging.Text = frm.textBox1.Text;
+            }
         }
 
         private void changeTechnicalCharacteristics_Click(object sender, EventArgs e)
@@ -180,7 +185,7 @@ namespace ChoosingBuildingMaterials
                 if (bx.Text == "")
                 {
                     errorProvider1.SetError(bx, "Поле должно быть непустое");
-                    e.Cancel = true;
+                    //e.Cancel = true;
                 }
                 else
                     errorProvider1.SetError(bx, "");
@@ -195,11 +200,40 @@ namespace ChoosingBuildingMaterials
                 if (bx.Text == "")
                 {
                     errorProvider1.SetError(bx, "Поле должно быть непустое");
-                    e.Cancel = true;
+                    //e.Cancel = true;
                 }
                 else
                     errorProvider1.SetError(bx, "");
             }
+        }
+
+        private void MaterialForm_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void Ok_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaterialForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (txtBxName.Text == "" && DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(@"Не заполнено поле ""Название"" ", "Ошибка");
+                e.Cancel = true;
+            }
+            else if ((cmbBxManufacturer.Text == "" || cmbBxManufacturer.SelectedItem == null) && DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(@"Не заполнено поле ""Производитель"" ", "Ошибка");
+                e.Cancel = true;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

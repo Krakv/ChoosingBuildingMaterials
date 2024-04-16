@@ -156,6 +156,7 @@
             this.Name = "ManufacturerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Производитель";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManufacturerForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

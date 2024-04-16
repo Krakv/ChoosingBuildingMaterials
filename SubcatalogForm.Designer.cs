@@ -122,6 +122,7 @@
             this.Name = "SubcatalogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SubcatalogForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SubcatalogForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -46,5 +46,19 @@ namespace ChoosingBuildingMaterials
                     errorProvider1.SetError(bx, "");
             }
         }
+
+        private void SubcatalogForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (txtBxName.Text == "" && AcceptButton.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(@"Не заполнено поле ""Название"" ", "Ошибка");
+                e.Cancel = true;
+            }
+            else if (catalogCmbBx.Text == "" && AcceptButton.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(@"Не заполнено поле ""Производитель"" ", "Ошибка");
+                e.Cancel = true;
+            }
+        }
     }
 }

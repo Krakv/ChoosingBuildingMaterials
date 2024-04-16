@@ -234,6 +234,8 @@
             // 
             // toolStripComboBox1
             // 
+            this.toolStripComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.toolStripComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.toolStripComboBox1.DropDownWidth = 270;
             this.toolStripComboBox1.Items.AddRange(new object[] {
             "Название",
@@ -311,7 +313,7 @@
             this.TreeViewDataBase.Name = "TreeViewDataBase";
             this.TreeViewDataBase.ShowPlusMinus = false;
             this.TreeViewDataBase.ShowRootLines = false;
-            this.TreeViewDataBase.Size = new System.Drawing.Size(409, 732);
+            this.TreeViewDataBase.Size = new System.Drawing.Size(200, 732);
             this.TreeViewDataBase.TabIndex = 4;
             this.TreeViewDataBase.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.TreeViewDataBase_AfterCollapse);
             this.TreeViewDataBase.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.TreeViewDataBase_BeforeExpand);
@@ -352,7 +354,6 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.filterTableLayoutPanel);
-            this.splitContainer3.Panel2Collapsed = true;
             this.splitContainer3.Size = new System.Drawing.Size(409, 732);
             this.splitContainer3.SplitterDistance = 200;
             this.splitContainer3.TabIndex = 0;
@@ -368,15 +369,15 @@
             this.filterTableLayoutPanel.RowCount = 2;
             this.filterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.filterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.filterTableLayoutPanel.Size = new System.Drawing.Size(96, 100);
+            this.filterTableLayoutPanel.Size = new System.Drawing.Size(205, 732);
             this.filterTableLayoutPanel.TabIndex = 0;
             // 
             // acceptButton
             // 
             this.acceptButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.acceptButton.Location = new System.Drawing.Point(3, 53);
+            this.acceptButton.Location = new System.Drawing.Point(3, 685);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(90, 44);
+            this.acceptButton.Size = new System.Drawing.Size(199, 44);
             this.acceptButton.TabIndex = 0;
             this.acceptButton.Text = "Подтвердить";
             this.acceptButton.UseVisualStyleBackColor = true;

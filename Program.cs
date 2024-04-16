@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Mysqlx.Session;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +18,15 @@ namespace ChoosingBuildingMaterials
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            try
+            {
+                Application.Run(new MainForm());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Текст ошибки: \n" + ex.Message, "Неизвестная ошибка");
+                return;
+            }
         }
     }
 }
