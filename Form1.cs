@@ -34,11 +34,12 @@ namespace ChoosingBuildingMaterials
         {
             try
             {
-                MessageBox.Show("Происходит попытка подключения к серверу.", "Предупреждение!");
+                MessageBox.Show("После закрытия этого окна, будет происходить подключение к серверу.", "Предупреждение!");
                 var cs = $"server={server};user={user};database=is_building_materials;password={password};CharSet=utf8;";
                 var con = new MySqlConnection(cs);
                 con.Open();
                 con.Close();
+                MessageBox.Show("Приложение успешно подключилось к серверу.", "Сообщение");
                 InitializeComponent();
                 Condition = string.Empty;
                 Tables = string.Empty;

@@ -25,7 +25,6 @@ namespace ChoosingBuildingMaterials
                 if (bx.Text == "")
                 {
                     errorProvider1.SetError(bx, "Поле должно быть непустое");
-                    e.Cancel = true;
                 }
                 else
                     errorProvider1.SetError(bx, "");
@@ -40,7 +39,6 @@ namespace ChoosingBuildingMaterials
                 if (bx.Text == "")
                 {
                     errorProvider1.SetError(bx, "Поле должно быть непустое");
-                    e.Cancel = true;
                 }
                 else
                     errorProvider1.SetError(bx, "");
@@ -49,12 +47,12 @@ namespace ChoosingBuildingMaterials
 
         private void SubcatalogForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (txtBxName.Text == "" && AcceptButton.DialogResult == DialogResult.OK)
+            if (txtBxName.Text == "" && DialogResult == DialogResult.OK)
             {
                 MessageBox.Show(@"Не заполнено поле ""Название"" ", "Ошибка");
                 e.Cancel = true;
             }
-            else if (catalogCmbBx.Text == "" && AcceptButton.DialogResult == DialogResult.OK)
+            else if (catalogCmbBx.Text == "" && DialogResult == DialogResult.OK)
             {
                 MessageBox.Show(@"Не заполнено поле ""Производитель"" ", "Ошибка");
                 e.Cancel = true;

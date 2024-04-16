@@ -585,7 +585,6 @@ namespace ChoosingBuildingMaterials
         private void addStoreButton_Click(object sender, EventArgs e)
         {
             StoreForm form = new StoreForm();
-            List<string[]> regions = SQLQuery.ReadRegions();
             form.ShowDialog();
             if (form.DialogResult == DialogResult.OK)
             {
