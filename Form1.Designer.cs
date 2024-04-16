@@ -313,7 +313,7 @@
             this.TreeViewDataBase.Name = "TreeViewDataBase";
             this.TreeViewDataBase.ShowPlusMinus = false;
             this.TreeViewDataBase.ShowRootLines = false;
-            this.TreeViewDataBase.Size = new System.Drawing.Size(200, 732);
+            this.TreeViewDataBase.Size = new System.Drawing.Size(409, 732);
             this.TreeViewDataBase.TabIndex = 4;
             this.TreeViewDataBase.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.TreeViewDataBase_AfterCollapse);
             this.TreeViewDataBase.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.TreeViewDataBase_BeforeExpand);
@@ -354,6 +354,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.filterTableLayoutPanel);
+            this.splitContainer3.Panel2Collapsed = true;
             this.splitContainer3.Size = new System.Drawing.Size(409, 732);
             this.splitContainer3.SplitterDistance = 200;
             this.splitContainer3.TabIndex = 0;

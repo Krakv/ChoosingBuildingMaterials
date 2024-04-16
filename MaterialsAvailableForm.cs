@@ -55,6 +55,7 @@ namespace ChoosingBuildingMaterials
             txt.Location = new Point(0, 30);
             txt.Width = 530;
             txt.Height = Height * 30 +600;
+            Height = txt.Height;
             txt.ReadOnly = true;
             ButtonWithId btn = sender as ButtonWithId;
             List<string[]> store = SQLQuery.ReadStores($" WHERE store_number = {btn.Id} ");

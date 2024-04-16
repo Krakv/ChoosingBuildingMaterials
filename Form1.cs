@@ -419,8 +419,18 @@ namespace ChoosingBuildingMaterials
             FilterForm frm = filterTableLayoutPanel.Controls[1] as FilterForm;
             if (frm != null)
             {
+                
                 string tags = "";
                 string tables = "";
+                string conditions = "";
+                if (Int32.TryParse(frm.underBorder.Text, out int underNumber))
+                {
+                    conditions += $" AND cost >= {underNumber} ";
+                }
+                if (Int32.TryParse(frm.upperBorder.Text, out int upperNumber))
+                {
+                    conditions += $" AND cost <= {upperNumber} ";
+                }
                 for (int i = 1; i < frm.tagPanel.Controls.Count; i++)
                 {
                     CheckBoxWithId bx = frm.tagPanel.Controls[i] as CheckBoxWithId;
@@ -456,7 +466,7 @@ namespace ChoosingBuildingMaterials
                     stores = $" AND ({stores.Substring(0, stores.Length - 2)}) ";
                 }
                 TreeNodeWithExtraInfo node = TreeViewDataBase.SelectedNode as TreeNodeWithExtraInfo;
-                Condition = tags + manufacturers + stores;
+                Condition = conditions + tags + manufacturers + stores;
                 Tables = tables;
                 if (node != null && node.Table == "materials")
                 {
