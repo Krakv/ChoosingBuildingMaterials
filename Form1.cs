@@ -25,22 +25,38 @@ namespace ChoosingBuildingMaterials
         private string Tables { get; set; }
         private string Search { get; set; }
         private string Order { get; set; }
+
         static private string password = "";
         static private string user = "user";
+        static public string server = "localhost";
 
         public MainForm()
         {
-            InitializeComponent();
-            Condition = string.Empty;
-            Tables = string.Empty;
-            Search = string.Empty;
-            Order = "materials.name";
-            SQLQuery.user = user;
-            SQLQuery.password = password;
+            try
+            {
+                MessageBox.Show("Происходит попытка подключения к серверу.", "Предупреждение!");
+                var cs = $"server={server};user={user};database=is_building_materials;password={password};CharSet=utf8;";
+                var con = new MySqlConnection(cs);
+                con.Open();
+                con.Close();
+                InitializeComponent();
+                Condition = string.Empty;
+                Tables = string.Empty;
+                Search = string.Empty;
+                Order = "materials.name";
+                SQLQuery.user = user;
+                SQLQuery.password = password;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось подключиться к серверу \n" + ex.Message, "Ошибка подключения");
+                return;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
             TreeNodeWithExtraInfo nodeMaterials = new TreeNodeWithExtraInfo("Материалы", TreeViewDataBase.Nodes.Count + 1, "materials");
             TreeViewDataBase.Nodes.Add(nodeMaterials);
             TreeNodeWithExtraInfo nodeCatalogs = new TreeNodeWithExtraInfo("Каталог", TreeViewDataBase.Nodes.Count + 1, "catalogs");
@@ -56,7 +72,7 @@ namespace ChoosingBuildingMaterials
 
         private void LoadCatalogs(TreeNode mainNode)
         {
-            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server={server};user={user};database=is_building_materials;password={password};CharSet=utf8;";
             using (var con = new MySqlConnection(cs))
             {
                 con.Open();
@@ -81,7 +97,7 @@ namespace ChoosingBuildingMaterials
 
         private void LoadSubcatalogs(TreeNodeWithExtraInfo inputNode)
         {
-            var cs = $"server=krakv.tplinkdns.com;user={user};database=is_building_materials;password={password};CharSet=utf8;";
+            var cs = $"server={server};user={user};database=is_building_materials;password={password};CharSet=utf8;";
 
             using (var con = new MySqlConnection(cs))
             {
@@ -533,7 +549,7 @@ namespace ChoosingBuildingMaterials
             {
                 try
                 {
-                    var cs = $"server=krakv.tplinkdns.com;user=admin;database=is_building_materials;password={form.txtBxName.Text};CharSet=utf8;";
+                    var cs = $"server={server};user=admin;database=is_building_materials;password={form.txtBxName.Text};CharSet=utf8;";
                     var con = new MySqlConnection(cs);
                     con.Open();
                     con.Close();
