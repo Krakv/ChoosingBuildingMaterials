@@ -28,6 +28,7 @@ namespace ChoosingBuildingMaterials
                     bx.Dock = DockStyle.Fill;
                     tagPanel.Controls.Add(bx, 0, 1);
                 }
+                
             }
             foreach (string[] item in SQLQuery.ReadManufacturers())
             {
@@ -89,6 +90,16 @@ namespace ChoosingBuildingMaterials
                     bx.Visible = true;
                 else
                     bx.Visible = false;
+            }
+        }
+
+        private void underBorder_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Text != "")
+            {
+                if (!Int32.TryParse(txt.Text, out int num) || num < 0)
+                    MessageBox.Show("Содержимое не является целым положительным числом", "Ошибка");
             }
         }
     }

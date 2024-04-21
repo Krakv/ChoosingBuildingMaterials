@@ -41,11 +41,11 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.searchBoxTag = new System.Windows.Forms.TextBox();
             this.searchButtonTag = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.upperBorder = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.underBorder = new System.Windows.Forms.TextBox();
-            this.upperBorder = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel.SuspendLayout();
             this.storePanel.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -244,16 +244,6 @@
             this.searchButtonTag.UseVisualStyleBackColor = true;
             this.searchButtonTag.Click += new System.EventHandler(this.searchButtonTag_Click);
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 44);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Стоимость от:";
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -272,6 +262,28 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(699, 44);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // upperBorder
+            // 
+            this.upperBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.upperBorder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.upperBorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.upperBorder.Location = new System.Drawing.Point(522, 3);
+            this.upperBorder.Multiline = true;
+            this.upperBorder.Name = "upperBorder";
+            this.upperBorder.Size = new System.Drawing.Size(174, 38);
+            this.upperBorder.TabIndex = 6;
+            this.upperBorder.Validating += new System.ComponentModel.CancelEventHandler(this.underBorder_Validating);
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 44);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Стоимость от:";
             // 
             // label2
             // 
@@ -293,17 +305,7 @@
             this.underBorder.Name = "underBorder";
             this.underBorder.Size = new System.Drawing.Size(353, 38);
             this.underBorder.TabIndex = 5;
-            // 
-            // upperBorder
-            // 
-            this.upperBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.upperBorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.upperBorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.upperBorder.Location = new System.Drawing.Point(522, 3);
-            this.upperBorder.Multiline = true;
-            this.upperBorder.Name = "upperBorder";
-            this.upperBorder.Size = new System.Drawing.Size(174, 38);
-            this.upperBorder.TabIndex = 6;
+            this.underBorder.Validating += new System.ComponentModel.CancelEventHandler(this.underBorder_Validating);
             // 
             // FilterForm
             // 

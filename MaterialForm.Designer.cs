@@ -62,6 +62,9 @@
             this.addManufacturer = new System.Windows.Forms.Button();
             this.tagsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.storesPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.storeSearchBox = new System.Windows.Forms.TextBox();
             this.tagSearchBox = new System.Windows.Forms.TextBox();
             this.storeSearchButton = new System.Windows.Forms.Button();
@@ -80,9 +83,6 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.storesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -502,7 +502,7 @@
             this.storesPanel.ColumnCount = 3;
             this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.storesPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
             this.storesPanel.Controls.Add(this.label3, 2, 0);
             this.storesPanel.Controls.Add(this.label2, 1, 0);
             this.storesPanel.Controls.Add(this.label1, 0, 0);
@@ -513,6 +513,31 @@
             this.storesPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.storesPanel.Size = new System.Drawing.Size(1227, 109);
             this.storesPanel.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(1105, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 48);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Стоимость (руб.)";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(984, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 48);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Количество";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(4, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(973, 48);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Магазин";
             // 
             // storeSearchBox
             // 
@@ -762,31 +787,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(974, 48);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Магазин";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(985, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 48);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Количество";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(1106, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 48);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Стоимость (руб.)";
             // 
             // MaterialForm
             // 

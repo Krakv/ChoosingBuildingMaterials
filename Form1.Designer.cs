@@ -298,12 +298,14 @@
             this.aboutProgram.Name = "aboutProgram";
             this.aboutProgram.Size = new System.Drawing.Size(118, 28);
             this.aboutProgram.Text = "О программе";
+            this.aboutProgram.Click += new System.EventHandler(this.aboutProgram_Click);
             // 
             // helper
             // 
             this.helper.Name = "helper";
             this.helper.Size = new System.Drawing.Size(81, 28);
             this.helper.Text = "Справка";
+            this.helper.Click += new System.EventHandler(this.helper_Click);
             // 
             // TreeViewDataBase
             // 
@@ -370,15 +372,15 @@
             this.filterTableLayoutPanel.RowCount = 2;
             this.filterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.filterTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.filterTableLayoutPanel.Size = new System.Drawing.Size(205, 732);
+            this.filterTableLayoutPanel.Size = new System.Drawing.Size(96, 100);
             this.filterTableLayoutPanel.TabIndex = 0;
             // 
             // acceptButton
             // 
             this.acceptButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.acceptButton.Location = new System.Drawing.Point(3, 685);
+            this.acceptButton.Location = new System.Drawing.Point(3, 53);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(199, 44);
+            this.acceptButton.Size = new System.Drawing.Size(90, 44);
             this.acceptButton.TabIndex = 0;
             this.acceptButton.Text = "Подтвердить";
             this.acceptButton.UseVisualStyleBackColor = true;

@@ -221,7 +221,7 @@ namespace ChoosingBuildingMaterials
         {
             if (txtBxName.Text == "" && DialogResult == DialogResult.OK)
             {
-                MessageBox.Show(@"Не заполнено поле ""Название"" ", "Ошибка");
+                MessageBox.Show(@"Не заполнено поле ""Наименование"" ", "Ошибка");
                 e.Cancel = true;
             }
             else if ((cmbBxManufacturer.Text == "" || cmbBxManufacturer.SelectedItem == null) && DialogResult == DialogResult.OK)

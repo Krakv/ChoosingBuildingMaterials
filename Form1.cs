@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChosingBuildingMaterials;
 using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -621,6 +622,18 @@ namespace ChoosingBuildingMaterials
             {
                 MessageBox.Show("Не найден последний запрос материалов.", "Не удалось");
             }
+        }
+
+        private void helper_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Help.ShowHelp(null, "UserGuide.chm");
+
+        }
+
+        private void aboutProgram_Click(object sender, EventArgs e)
+        {
+            AboutBox1 frm = new AboutBox1();
+            frm.ShowDialog();
         }
     }
 
