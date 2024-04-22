@@ -99,7 +99,10 @@ namespace ChoosingBuildingMaterials
             if (txt != null && txt.Text != "")
             {
                 if (!Int32.TryParse(txt.Text, out int num) || num < 0)
+                {
                     MessageBox.Show("Содержимое не является целым положительным числом", "Ошибка");
+                    txt.Text = string.Empty;
+                }
             }
         }
     }

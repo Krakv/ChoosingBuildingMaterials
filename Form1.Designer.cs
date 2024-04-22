@@ -338,7 +338,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Panel2MinSize = 800;
             this.splitContainer1.Size = new System.Drawing.Size(1515, 732);
             this.splitContainer1.SplitterDistance = 409;
             this.splitContainer1.TabIndex = 7;
@@ -413,7 +412,7 @@
             this.materialInfoPanel.Location = new System.Drawing.Point(0, 0);
             this.materialInfoPanel.MinimumSize = new System.Drawing.Size(530, 530);
             this.materialInfoPanel.Name = "materialInfoPanel";
-            this.materialInfoPanel.Size = new System.Drawing.Size(530, 530);
+            this.materialInfoPanel.Size = new System.Drawing.Size(1073, 732);
             this.materialInfoPanel.TabIndex = 0;
             // 
             // menuStrip2
@@ -426,7 +425,7 @@
             this.storesInfoBtn});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(530, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1073, 28);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 

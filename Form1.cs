@@ -341,6 +341,7 @@ namespace ChoosingBuildingMaterials
                     materialInfoPanel.Controls.RemoveAt(1);
                 MaterialInfo frm = new MaterialInfo(Row);
                 frm.TopLevel = false;
+                frm.Dock = DockStyle.Fill;
                 materialInfoPanel.Controls.Add(frm);
                 frm.Show();
                 splitContainer2.Panel2Collapsed = false;
